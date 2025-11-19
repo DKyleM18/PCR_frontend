@@ -35,7 +35,7 @@ export default function SignUpModal({
   };
 
   const handleSignInClick = () => {
-    setActiveModal("login");
+    setActiveModal("signin");
   };
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function SignUpModal({
       title="Sign Up"
       altButtonText="Log In"
       onClose={onClose}
-      isOpen={activeModal === "register"}
+      isOpen={activeModal === "signup"}
       onSubmit={handleSubmit}
       altButtonClick={handleSignInClick}
     >
@@ -60,7 +60,7 @@ export default function SignUpModal({
         <input
           id="registerEmail"
           type="email"
-          className="modal__input"
+          className="modal__input block w-full border-b-black border-solid border-b"
           placeholder="Email"
           onChange={handleEmailChange}
           value={email || ""}
@@ -72,7 +72,7 @@ export default function SignUpModal({
         <input
           id="registerPassword"
           type="password"
-          className="modal__input"
+          className="modal__input block w-full border-b-black border-solid border-b"
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password || ""}
@@ -84,22 +84,11 @@ export default function SignUpModal({
         <input
           id="registerName"
           type="text"
-          className="modal__input"
+          className="modal__input block w-full border-b-black border-solid border-b"
           placeholder="Name"
           onChange={handleNameChange}
           value={name || ""}
           required
-        />
-      </label>
-      <label htmlFor="registerAvatar" className="modal__label">
-        Avatar URL{" "}
-        <input
-          id="registerAvatar"
-          type="url"
-          className="modal__input"
-          placeholder="Avatar URL"
-          onChange={handleAvatarUrlChange}
-          value={avatar || ""}
         />
       </label>
     </ModalForm>

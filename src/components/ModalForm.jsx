@@ -10,7 +10,7 @@ export default function ModalForm({
 }) {
   return (
     <div
-      className={`modal position-fixed m-0 bg-stone-800 flex justify-center p-0 z-2 invisible  ${
+      className={`modal fixed top-0 right-0 bottom-0 left-0 m-0 bg-stone-800/50 bg-opacity-50 flex justify-center items-center p-0 z-2 invisible  ${
         isOpen && "modal__opened visible"
       }`}
     >
@@ -19,7 +19,7 @@ export default function ModalForm({
         <button
           onClick={onClose}
           type="button"
-          className="modal__close absolute top-5 right-6 bottom-5 left-5 cursor-pointer border-none bg-transparent bg-repeat bg-contain bg-[url('/src/assets/close-button.svg')]"
+          className="modal__close absolute top-5 right-6 bottom-5 w-5 cursor-pointer border-none bg-transparent bg-no-repeat bg-contain bg-[url('/src/assets/close-button.svg')]"
         />
         <form
           action=""

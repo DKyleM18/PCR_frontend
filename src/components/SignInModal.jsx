@@ -44,7 +44,7 @@ export default function SignInModal({
       buttonText={isLoading ? "Logging In..." : "Log In"}
       title="Log in"
       onClose={onClose}
-      isOpen={activeModal === "login"}
+      isOpen={activeModal === "signin"}
       onSubmit={handleSubmit}
       altButtonClick={handleSignUpClick}
       altButtonText="Sign Up"
