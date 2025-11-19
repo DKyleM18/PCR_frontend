@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({
+  isLoggedIn,
+  handleSignIn,
+  handleSignUp,
+  handleSignOut,
+  handleCheckIn,
+  handleCheckOut,
+}) {
   return (
     <>
-      <header className="bg-white shadow">
+      <header className="bg-white shadow-md pb-4">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/">
@@ -21,6 +28,28 @@ export default function Header() {
               />
             </Link>
           </div>
+          {isLoggedIn ? (
+            <div className="flex space-x-4">
+              <button onClick={handleCheckOut} className="mr-4" type="button">
+                Check Out
+              </button>
+              <button onClick={handleCheckIn} className="mr-4" type="button">
+                Check In
+              </button>
+              <button onClick={handleSignOut} className="mr-4" type="button">
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className="flex space-x-4">
+              <button onClick={handleSignIn} className="mr-4" type="button">
+                Sign In
+              </button>
+              <button onClick={handleSignUp} className="mr-4" type="button">
+                Sign Up
+              </button>
+            </div>
+          )}
         </div>
       </header>
     </>
