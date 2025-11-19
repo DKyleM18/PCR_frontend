@@ -29,7 +29,7 @@ export default function SignInModal({
   };
 
   const handleSignUpClick = () => {
-    setActiveModal("register");
+    setActiveModal("signup");
   };
 
   useEffect(() => {
@@ -41,8 +41,8 @@ export default function SignInModal({
   return (
     <ModalForm
       activeModal={activeModal}
-      buttonText={isLoading ? "Logging In..." : "Log In"}
-      title="Log in"
+      buttonText={isLoading ? "Signing In..." : "Sign In"}
+      title="Sign in"
       onClose={onClose}
       isOpen={activeModal === "signin"}
       onSubmit={handleSubmit}
@@ -66,7 +66,7 @@ export default function SignInModal({
         <input
           id="loginPassword"
           type="password"
-          className="modal__input"
+          className="modal__input block w-full border-b-black border-solid border-b"
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password || ""}

@@ -47,15 +47,15 @@ export default function SignUpModal({
   return (
     <ModalForm
       activeModal={activeModal}
-      buttonText={isLoading ? "Signing up..." : "Next"}
+      buttonText={isLoading ? "Signing up..." : "Sign Up"}
       title="Sign Up"
-      altButtonText="Log In"
+      altButtonText="Sign In"
       onClose={onClose}
       isOpen={activeModal === "signup"}
       onSubmit={handleSubmit}
       altButtonClick={handleSignInClick}
     >
-      <label htmlFor="registerEmail" className="modal__label">
+      <label htmlFor="registerEmail" className="modal__label mb-6">
         Email{" "}
         <input
           id="registerEmail"
@@ -67,7 +67,7 @@ export default function SignUpModal({
           required
         />
       </label>
-      <label htmlFor="registerPassword" className="modal__label">
+      <label htmlFor="registerPassword" className="modal__label mb-6">
         Password{" "}
         <input
           id="registerPassword"
@@ -79,7 +79,7 @@ export default function SignUpModal({
           required
         />
       </label>
-      <label htmlFor="registerName" className="modal__label">
+      <label htmlFor="registerName" className="modal__label mb-6">
         Name{" "}
         <input
           id="registerName"
