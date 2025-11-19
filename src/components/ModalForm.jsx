@@ -1,8 +1,7 @@
-export default function ModalWithForm({
+export default function ModalForm({
   children,
   title,
   buttonText,
-  activeModal,
   onClose,
   isOpen,
   onSubmit,
@@ -11,22 +10,30 @@ export default function ModalWithForm({
 }) {
   return (
     <div
-      className={`position-fixed m-0 bg-stone-800 flex justify-center p-0 z-2 invisible  ${
-        isOpen && "visible"
+      className={`modal position-fixed m-0 bg-stone-800 flex justify-center p-0 z-2 invisible  ${
+        isOpen && "modal__opened visible"
       }`}
     >
-      <div className="modal__content modal__content_type_form">
-        <h2 className="modal__title">{title}</h2>
-        <button onClick={onClose} type="button" className="modal__close" />
-        <form action="" onSubmit={onSubmit} className="modal__form">
+      <div className="modal__content bg-gray-200 relative max-w-md w-full rounded-xl box-border font-medium text-lg p-7 pb-9">
+        <h2 className="modal__title mb-6 font-medium text-lg">{title}</h2>
+        <button
+          onClick={onClose}
+          type="button"
+          className="modal__close absolute top-5 right-6 bottom-5 left-5 cursor-pointer border-none bg-transparent bg-repeat bg-contain bg-[url('/src/assets/close-button.svg')]"
+        />
+        <form
+          action=""
+          onSubmit={onSubmit}
+          className="modal__form flex flex-col m-0 p-0 w-full"
+        >
           {children}
-          <div className="modal__buttons">
-            <button type="submit" className="modal__submit">
+          <div className="modal__buttons flex">
+            <button type="submit" className="modal__submit m-0 p-0 ">
               {buttonText}
             </button>
             <button
               type="button"
-              className="modal__alt-button"
+              className="modal__alt-button ml-3 p-0 bg-transparent text-blue-400 border-0"
               onClick={altButtonClick}
             >
               {altButtonText}
