@@ -8,7 +8,7 @@ import { signup, signin, checkToken } from "../utils/auth";
 import { getItems, addItem, deleteItem, editUser } from "../utils/api";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [isLoading, setIsLoading] = useState(false);

@@ -46,4 +46,4 @@ function editUser({ name }, token) {
   });
 }
 
-export { addItem, deleteItem, getItems, editUser };
+export { addItem, deleteItem, getItems, editUser, baseUrl, request };
